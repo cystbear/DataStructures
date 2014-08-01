@@ -33,29 +33,29 @@ class LinkedList
         return $node;
     }
 
+    public function next()
+    {
+        $this->prev = $this->current;
+        return $this->current = $this->current->next();
+    }
+
     public function getItem($number)
     {
+        $itemNumber = (int) $number;
+        if ($itemNumber < 1) throw new \InvalidArgumentException('Item Number should be greater than 1');
         $this->reset();
         $i = 1;
-        while ($number !== $i) {
-            if (!$this->next()) {
-                throw new \RuntimeException('End of List');
-            }
+        while ($number > $i) {
+            if (!$this->next()) throw new \RuntimeException('End of List');
             $i++;
         }
         return $this->current;
     }
 
-    private function getTail()
+    public function getTail()
     {
         while ($this->next()){}
         return $this->prev;
-    }
-
-    private function next()
-    {
-        $this->prev = $this->current;
-        return $this->current = $this->current->next();
     }
 
     private function init($start)

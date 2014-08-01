@@ -11,7 +11,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     public function testGetData($entry)
     {
         $node = new Node($entry);
-        $this->assertEquals($node->getData(), $entry);
+        $this->assertEquals($entry, $node->getData());
     }
 
     public function getNodeData()
