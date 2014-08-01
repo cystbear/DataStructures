@@ -1,5 +1,9 @@
 <?php
 
+namespace DataStructures\Lst;
+
+use DataStructures\Node;
+
 class LinkedList
 {
     private $start;

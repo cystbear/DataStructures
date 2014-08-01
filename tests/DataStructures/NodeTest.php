@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../Node.php';
-require_once __DIR__ . '/../LinkedList.php';
+use DataStructures\Node;
 
 class NodeTest extends \PHPUnit_Framework_TestCase
 {
