@@ -6,8 +6,9 @@ namespace DataStructures\Lst;
  * Interface ListInterface
  * @package DataStructures\Lst
  */
-interface ListInterface
+interface ListInterface extends \Iterator, \Countable, \ArrayAccess, \Serializable
 {
+
     const IT_MODE_LIFO   = 2;
     const IT_MODE_FIFO   = 0;
     const IT_MODE_DELETE = 1;
